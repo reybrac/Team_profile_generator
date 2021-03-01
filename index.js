@@ -3,6 +3,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const 
+
 const generateHTML = (answers) =>
   `<!DOCTYPE html>
 <html lang="en">
@@ -15,12 +17,12 @@ const generateHTML = (answers) =>
 <body>
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-    <p class="lead">I am from ${answers.location}.</p>
+    <h1 class="display-4">Hi! My name is ${answers.manager}</h1>
+    <p class="lead">I am from ${answers.IDM}.</p>
     <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
     <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.github}</li>
-      <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
+      <li class="list-group-item">My GitHub username is ${answers.emailM}</li>
+      <li class="list-group-item">LinkedIn: ${answers.office}</li>
     </ul>
   </div>
 </div>
@@ -46,7 +48,7 @@ inquirer
     },
     {
       type: 'input',
-      name: 'Office',
+      name: 'office',
       message: 'Enter the office number?'
     },
     {
