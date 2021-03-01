@@ -31,34 +31,31 @@ inquirer
   .prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'Please enter your team member information?',
+      name: 'manager',
+      message: "Please enter the team manager's name?"
     },
     {
       type: 'input',
-      name: 'location',
-      message: 'Where are you from?',
+      name: 'IDM',
+      message: 'Enter manager ID?'
     },
     {
       type: 'input',
-      name: 'hobby',
-      message: 'What is your favorite hobby?',
+      name: 'emailM',
+      message: 'Enter manager email address?'
     },
     {
       type: 'input',
-      name: 'food',
-      message: 'What is your favorite food?',
+      name: 'Office',
+      message: 'Enter the office number?'
     },
     {
-      type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub Username',
+      type: 'list',
+      name: 'employees',
+      message: 'Add additional employee',
+      choices: ['Engineer', 'Intern', 'Finish building team'],
     },
-    {
-      type: 'input',
-      name: 'linkedin',
-      message: 'Enter your LinkedIn URL.',
-    },
+    
   ])
   .then((answers) => {
     const htmlPageContent = generateHTML(answers);
