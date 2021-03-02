@@ -3,7 +3,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const 
+
 
 const generateHTML = (answers) =>
   `<!DOCTYPE html>
@@ -56,11 +56,51 @@ inquirer
       name: 'employees',
       message: 'Add additional employee',
       choices: ['Engineer', 'Intern', 'Finish building team'],
+    //   when: function (answer) {
+
+    //   }
     },
     
   ])
-  .then((answers) => {
-    const htmlPageContent = generateHTML(answers);
+  .then((data) => {
+
+    switch (data.employees) {
+        case 'Engineer':
+            inquirer.prompt([
+                {
+                type: 'input',
+                name: 'engineer',
+                message: "Please enter the engineer's name?"
+                },
+                {
+                type: 'input',
+                name: 'IDE',
+                message: 'Enter engineer ID?'
+                },
+                {
+                type: 'input',
+                name: 'emailE',
+                message: "Enter engineer's email address?"
+                },
+                {
+                type: 'input',
+                name: 'office',
+                message: 'Enter the office number?'
+                }
+            ]);
+          break;
+        case 'Intern':
+            data.intern = "intern";
+            console.log(data.intern);
+          break;
+        case 'Finish building team':
+          break;
+        // default:
+        //   console.log('Select an option!');
+      }
+
+
+    const htmlPageContent = generateHTML(data);
 
     fs.writeFile('index.html', htmlPageContent, (err) =>
       err ? console.log(err) : console.log('Successfully created index.html!')
