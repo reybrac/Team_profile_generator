@@ -35,30 +35,34 @@ inquirer
       type: 'input',
       name: 'manager',
       message: "Please enter the team manager's name?"
+        // test manager input is an alphabetical string
     },
     {
       type: 'input',
       name: 'IDM',
       message: 'Enter manager ID?'
+        // test ID is a number
     },
     {
       type: 'input',
       name: 'emailM',
       message: 'Enter manager email address?'
+        // test that information was entered
     },
     {
       type: 'input',
       name: 'office',
       message: 'Enter the office number?'
+        // test that office is a number
     },
     {
       type: 'list',
       name: 'employees',
       message: 'Add additional employee',
       choices: ['Engineer', 'Intern', 'Finish building team'],
-    //   when: function (answer) {
-
-    //   }
+        // If engineer --
+        // if intern --
+        // if FBT -- run the code and create HTML file   
     },
     
   ])
@@ -71,27 +75,55 @@ inquirer
                 type: 'input',
                 name: 'engineer',
                 message: "Please enter the engineer's name?"
+                // test manager input is an alphabetical string
                 },
                 {
                 type: 'input',
                 name: 'IDE',
                 message: 'Enter engineer ID?'
+                // test ID is a number
                 },
                 {
                 type: 'input',
                 name: 'emailE',
                 message: "Enter engineer's email address?"
+                // test that information was entered
                 },
                 {
                 type: 'input',
                 name: 'office',
                 message: 'Enter the office number?'
+                // test that office is a number
                 }
             ]);
           break;
         case 'Intern':
-            data.intern = "intern";
-            console.log(data.intern);
+            inquirer.prompt([
+                {
+                type: 'input',
+                name: 'intern',
+                message: "Please enter the intern's name?"
+                // test manager input is an alphabetical string
+                },
+                {
+                type: 'input',
+                name: 'IDI',
+                message: 'Enter intern ID?'
+                // test ID is a number
+                },
+                {
+                type: 'input',
+                name: 'emailI',
+                message: "Enter engineer's email address?"
+                // test that information was entered
+                },
+                {
+                type: 'input',
+                name: 'school',
+                message: 'Enter the school information?'
+                // test that office is a number
+                }
+            ]);
           break;
         case 'Finish building team':
           break;
@@ -102,7 +134,7 @@ inquirer
 
     const htmlPageContent = generateHTML(data);
 
-    fs.writeFile('index.html', htmlPageContent, (err) =>
+    fs.writeFile('index.html', htmlPageContent, (err) => // test to verify the HTML file was created
       err ? console.log(err) : console.log('Successfully created index.html!')
     );
   });
