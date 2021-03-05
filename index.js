@@ -16,16 +16,22 @@ const generateHTML = (answers) =>
 </head>
 <body>
   <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hi! My name is ${answers.manager}</h1>
-    <p class="lead">I am from ${answers.IDM}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.emailM}</li>
-      <li class="list-group-item">LinkedIn: ${answers.office}</li>
-    </ul>
+    <h1>My Team</h1>
   </div>
-</div>
+  <div class="container">
+    Name: ${answers.manager}
+    Manager
+    ID: ${answers.IDM}
+    Email: ${answers.emailM}
+    Office number: ${answers.office}
+  </div>
+  <div class ="container">
+    Name: ${answers.engineer}
+    Engineer 
+    ID: ${answers.emailE}
+    Email: 
+    GitHub:
+
 </body>
 </html>`;
 
@@ -131,7 +137,7 @@ inquirer
         //   console.log('Select an option!');
       }
 
-
+    // need to add test
     const htmlPageContent = generateHTML(data);
 
     fs.writeFile('index.html', htmlPageContent, (err) => // test to verify the HTML file was created
