@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-//const { appendFile } = require('node:fs');
 
 var manager = [];
 var engineers = [];
@@ -159,6 +158,8 @@ function writeInfo (engineers, interns){
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="./lib/style.css">
       <title>Document</title>
     </head>
     <body>
@@ -166,10 +167,11 @@ function writeInfo (engineers, interns){
         <h1> My Team </h1>
       </div>
       
-      <container class="container">
+      <container class="card-group container">
         <div class="card1" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Manager: ${manager[0].manager}</h5>
+          <h4 class="card-title"> Manager: ${manager[0].manager}</h4>
+          <h6><i class="fa fa-mug-hot"> Manager </i></h6>
         </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${manager[0].IDM}</li>
@@ -177,16 +179,12 @@ function writeInfo (engineers, interns){
             <li class="list-group-item">Office #: ${manager[0].office}</li>
           </ul>
         </div>
-        
-      </container>     
-     
-      <div class="engineers" style="hidden">
-      ${engineers}
-      </div>
-      <div class="interns" style="hidden">
-      ${interns}
-      </div>
+
+        ${engineers}
+            
+        ${interns}
       
+      </container> 
     </body>
     </html>
   `;
@@ -199,14 +197,15 @@ function writeInfo (engineers, interns){
 function engineerCard (engineers) {
   return `
   <div class="card1" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Engineer: ${engineers.engineer}</h5>
-  </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID: ${engineers.IDE}</li>
-      <li class="list-group-item">email: ${engineers.emailE}</li>
-      <li class="list-group-item">Github: ${engineers.github}</li>
-    </ul>
+      <div class="card-body">
+        <h4 class="card-title">Engineer: ${engineers.engineer}</h4>
+        <h6><i class="fa fa-cogs"> Engineer </i></h6>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: ${engineers.IDE}</li>
+        <li class="list-group-item">email: ${engineers.emailE}</li>
+        <li class="list-group-item">Github: ${engineers.github}</li>
+      </ul>
   </div>
   `
 }
@@ -214,9 +213,10 @@ function engineerCard (engineers) {
 function internCard (interns) {
   return `
   <div class="card1" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Intern: ${interns.intern}</h5>
-  </div>
+    <div class="card-body">
+      <h4 class="card-title">${interns.intern}</h4>
+      <h6><i class="fa fa-graduation-cap"> Intern </i></h6>
+    </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${interns.IDI}</li>
       <li class="list-group-item">email: ${interns.emailI}</li>
