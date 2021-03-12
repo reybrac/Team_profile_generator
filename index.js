@@ -1,5 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
 var manager = [];
 var engineers = [];
@@ -33,7 +36,8 @@ var interns = [];
           message: 'Enter the office number?'
       },
   ]).then((answers) => {
-      manager.push(answers);
+      const newManager = new Manager(answers.manager, answers.IDM, answers.emailM, answers.office);
+      manager.push(newManager);
       addPrompt();
   });
 }
@@ -104,8 +108,9 @@ var interns = [];
         message: 'Enter the GitHub username'
         // test that office is a number
         },
-    ]).then((data) =>{
-      engineers.push(data);
+    ]).then((answers) =>{
+      const newEngineer = new Engineer(answers.engineer, answers.IDE, answers.emailE, answers.github);
+      engineers.push(newEngineer);
       
       addPrompt();
     });
@@ -139,8 +144,9 @@ var interns = [];
       message: 'Enter the school information?'
       // test that office is a number
       }
-  ]).then((data) => {
-    interns.push(data);
+  ]).then((answers) => {
+    const newIntern = new Intern(answers.intern, answers.IDI, answers.emailI, answers.school);
+    interns.push(newIntern);
     addPrompt();
     
   });
@@ -159,7 +165,7 @@ function writeInfo (engineers, interns){
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="./lib/style.css">
+      <link rel="stylesheet" href="./dist/style.css">
       <title>Document</title>
     </head>
     <body>
@@ -170,13 +176,13 @@ function writeInfo (engineers, interns){
       <container class="card-group container">
         <div class="card1" style="width: 18rem;">
         <div class="card-body">
-          <h4 class="card-title"> Manager: ${manager[0].manager}</h4>
-          <h6><i class="fa fa-mug-hot"> Manager </i></h6>
+          <h4 class="card-title"> ${manager[0].name}</h4>
+          <h5><i class="fa fa-mug-hot"> Manager </i></h5>
         </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${manager[0].IDM}</li>
-            <li class="list-group-item">email: ${manager[0].emailM}</li>
-            <li class="list-group-item">Office #: ${manager[0].office}</li>
+            <li class="list-group-item">ID: ${manager[0].id}</li>
+            <li class="list-group-item">email: ${manager[0].email}</li>
+            <li class="list-group-item">Office #: ${manager[0].officeNumber}</li>
           </ul>
         </div>
 
@@ -198,12 +204,12 @@ function engineerCard (engineers) {
   return `
   <div class="card1" style="width: 18rem;">
       <div class="card-body">
-        <h4 class="card-title">Engineer: ${engineers.engineer}</h4>
-        <h6><i class="fa fa-cogs"> Engineer </i></h6>
+        <h4 class="card-title">Engineer: ${engineers.name}</h4>
+        <h5><i class="fa fa-cogs"> Engineer </i></h5>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${engineers.IDE}</li>
-        <li class="list-group-item">email: ${engineers.emailE}</li>
+        <li class="list-group-item">ID: ${engineers.id}</li>
+        <li class="list-group-item">email: ${engineers.email}</li>
         <li class="list-group-item">Github: ${engineers.github}</li>
       </ul>
   </div>
@@ -214,12 +220,12 @@ function internCard (interns) {
   return `
   <div class="card1" style="width: 18rem;">
     <div class="card-body">
-      <h4 class="card-title">${interns.intern}</h4>
-      <h6><i class="fa fa-graduation-cap"> Intern </i></h6>
+      <h4 class="card-title">${interns.name}</h4>
+      <h5><i class="fa fa-graduation-cap"> Intern </i></h5>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID: ${interns.IDI}</li>
-      <li class="list-group-item">email: ${interns.emailI}</li>
+      <li class="list-group-item">ID: ${interns.id}</li>
+      <li class="list-group-item">email: ${interns.email}</li>
       <li class="list-group-item">School: ${interns.school}</li>
     </ul>
   </div>
