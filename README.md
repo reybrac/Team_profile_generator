@@ -22,6 +22,10 @@ see the video below for details on how to run the program. https://drive.google.
 ## Usage information: 
 Usage is to generate a Team profile HTML by taking input from the user utilizing inquirer prompt. 
 
+Example HTML team profile below:
+![alt TeamProfile](https://github.com/reybrac/Team_profile_generator/blob/main/dist/Pictures/Team-profile-generator.JPG?raw=true)
+
+
 ## Contribution guidelines: 
 Github, W3Schools, TA's Ryan and Zac, and help from examples in class.
 
