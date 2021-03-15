@@ -1,0 +1,19 @@
+.jumbotron{
+    text-align: center;
+    background-color:dodgerblue;
+    color: white;
+    padding-top: 10px;
+}
+
+.card1 {
+    border-style:inherit;
+    box-shadow: 5px 10px #888888;
+    border: 1px solid #BFBFBF;
+    margin: 10px;
+}
+
+.card-body{
+    color: white;
+    background-color: dodgerblue;
+    text-align: center;
+}
