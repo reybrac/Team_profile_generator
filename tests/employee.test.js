@@ -20,4 +20,28 @@ describe("Employee", () => {
         });
     });
 
+    describe("getId", () => {
+        it("should return employee id", () => {
+            const employee = new Employee("Rey", 1, "rb@yahoo.com");
+            
+            expect(employee.getId()).toEqual(1);
+        });
+    });
+
+    describe("getEmail", () => {
+        it("should return employee email", () => {
+            const employee = new Employee("Rey", 1, "rb@yahoo.com");
+            
+            expect(employee.getEmail()).toEqual("rb@yahoo.com");
+        });
+    });
+
+    describe("getRole", () => {
+        it("should return employee role", () => {
+
+            const employee = new Employee("Rey", 1, "rb@yahoo.com");
+            expect(employee.getRole()).toEqual("Employee");
+        });
+    });
 });
+

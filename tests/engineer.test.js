@@ -1,26 +1,55 @@
-const Employee = require("../lib/employee");
+const Engineer = require("../lib/engineer");
 
-describe("Employee", () => {
+describe("Engineer", () => {
     describe("Initialization", () => {
-        it("should create an employee with a name, id, and email", () => {
-            const employee = new Employee("Rey", 1, "rb@yahoo.com");
+        it("should create an engineer with a name, id, and email", () => {
+            const engineer = new Engineer("Mari", 2, "mari@aol.com");
             
-            expect(employee.name).toEqual("Rey");
-            expect(employee.id).toEqual(1);
-            expect(employee.email).toEqual("rb@yahoo.com");
+            expect(engineer.name).toEqual("Mari");
+            expect(engineer.id).toEqual(2);
+            expect(engineer.email).toEqual("mari@aol.com");
         });
     });
 
     describe("getName", () => {
-        it("should return employee name", () => {
-            const employee = new Employee("Rey", 1, "rb@yahoo.com");
+        it("should return engineer name", () => {
+            const engineer = new Engineer("Mari", 2, "mari@aol.com");
             
-            expect(employee.getName()).toEqual("Rey");
+            expect(engineer.getName()).toEqual("Mari");
+        });
+    });
+
+    describe("getId", () => {
+        it("should return engineer id", () => {
+            const engineer = new Engineer("Mari", 2, "mari@aol.com");
+            
+            expect(engineer.getId()).toEqual(2);
+        });
+    });
+
+    describe("getEmail", () => {
+        it("should return engineer email", () => {
+            const engineer = new Engineer("Mari", 2, "mari@aol.com");
+            
+            expect(engineer.getEmail()).toEqual("mari@aol.com");
+        });
+    });
+
+    describe("getRole", () => {
+        it("should return engineer role", () => {
+
+            const engineer = new Engineer("Mari", 2, "mari@aol.com");
+            expect(engineer.getRole()).toEqual("Engineer");
+        });
+    });
+
+    describe("getGithub", () => {
+        it("should return Github name", () => {
+
+            const engineer = new Engineer("Mari", 2, "mari@aol.com", "maribrac");
+            expect(engineer.getGithub()).toEqual("maribrac");
         });
     });
 
 });
 
-//constructor
-
-//get github method

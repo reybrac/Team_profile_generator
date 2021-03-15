@@ -210,7 +210,7 @@ function engineerCard (engineers) {
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${engineers.id}</li>
         <li class="list-group-item">email: ${engineers.email}</li>
-        <li class="list-group-item">Github: ${engineers.github}</li>
+        <li class="list-group-item">Github: <a href="www.https://github.com/${engineers.github}">${engineers.github}</a></li>
       </ul>
   </div>
   `
