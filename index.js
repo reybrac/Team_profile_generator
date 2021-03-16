@@ -177,7 +177,7 @@ function writeInfo (engineers, interns){
         <div class="card1" style="width: 18rem;">
         <div class="card-body">
           <h4 class="card-title"> ${manager[0].name}</h4>
-          <h5><i class="fa fa-mug-hot"> Manager </i></h5>
+          <h5><i class="fa fa-coffee"> Manager </i></h5>
         </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${manager[0].id}</li>

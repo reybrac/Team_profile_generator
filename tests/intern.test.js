@@ -36,7 +36,7 @@ describe("intern", () => {
     });
 
     describe("getSchool", () => {
-        it("should return intern email", () => {
+        it("should return intern Schooll", () => {
             const intern = new Intern("John", 3, "john@hotmail.com", "UC Davis");
             
             expect(intern.getSchool()).toEqual("UC Davis");
@@ -44,7 +44,7 @@ describe("intern", () => {
     });
 
     describe("getRole", () => {
-        it("should return intern email", () => {
+        it("should return intern role", () => {
             const intern = new Intern("John", 3, "john@hotmail.com");
             
             expect(intern.getRole()).toEqual("Intern");

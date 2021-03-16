@@ -17,7 +17,10 @@ A Node.js command-line application that takes in information about employees on 
 ## Installation instructions: 
 Utilize NPM Inquirer packet. Then run node server.js to start the program.
 
-see the video below for details on how to run the program. https://drive.google.com/file/d/1ZVySwShra7IsCkwbMc--2CmrbK_1IFrr/view?usp=sharing
+see the video below for details on how to run the program. 
+
+1. Part 1: https://drive.google.com/file/d/1F8RY7TmVRyAIyuyNzM7-iTap6DdHAOOV/view?usp=sharingusp=sharing
+2. Part 2: https://drive.google.com/file/d/1HdDE2B7g5a1GgC1hJwze-82pjvl6p-uM/view?usp=sharing
 
 ## Usage information: 
 Usage is to generate a Team profile HTML by taking input from the user utilizing inquirer prompt. 
